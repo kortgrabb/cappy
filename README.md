@@ -54,7 +54,7 @@ exit
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/yourusername/your-repository-name.git](https://github.com/kortgrabb/cappy.git)
+   git clone https://github.com/kortgrabb/cappy.git
    ```
 2. Navigate to the cloned directory:
    ```bash
