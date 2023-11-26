@@ -63,11 +63,11 @@ PasswordManager::~PasswordManager()
 
 void PasswordManager::createPass(const std::string& site, std::string& password)
 {
-    // Check if the password starts with "-r="
     if (password == "-r") 
     {
         password = generateRandomString(21);
     } 
+    // Check if the password string starts with "-r="
     else if (password.size() > 3 && password.substr(0, 3) == "-r=")
     {
         std::string lengthStr = password.substr(3);
