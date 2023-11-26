@@ -63,9 +63,28 @@ PasswordManager::~PasswordManager()
 
 void PasswordManager::createPass(const std::string& site, std::string& password)
 {
+    // Check if the password starts with "-r="
     if (password == "-r") 
     {
         password = generateRandomString(21);
+    } 
+    else if (password.size() > 3 && password.substr(0, 3) == "-r=")
+    {
+        std::string lengthStr = password.substr(3);
+
+        // Check if the substring is all ldigits
+        if (std::find_if(lengthStr.begin(), lengthStr.end(), [](char c) { return !std::isdigit(c); }) == lengthStr.end())
+        {
+            // Convert the length string to an integer
+            int length = std::stoi(lengthStr);
+
+            // Generate a random string of the specified length
+            password = generateRandomString(length);
+        }
+        else {
+            std::cerr << "Invalid length for random password generation.\n";
+            return;
+        }
     }
 
     std::string insertQuery = "INSERT INTO passwords (site, password) VALUES ('" + site + "', '" + password + "');";
