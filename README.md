@@ -11,7 +11,7 @@ Below are the detailed explanations and examples for each command supported by t
 
 ### Add a New Password Entry
 ```bash
-add <site>(-r) <password>
+add <site> <password>
 ```
 - Use this command to store a new password for a given site.
 - Example: `add google.com mySecureP@ssw0rd` will store the password `mySecureP@ssw0rd` for the site `google.com`.
