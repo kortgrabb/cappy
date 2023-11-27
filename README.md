@@ -15,7 +15,7 @@ add <site> <password>
 ```
 - Use this command to store a new password for a given site.
 - Example: `add google.com mySecureP@ssw0rd` will store the password `mySecureP@ssw0rd` for the site `google.com`.
-- Use the `-r` parameter on the password argument to generate a random 21 long password.
+- Use the `-r` parameter on the password argument to generate a random 21 long password or append an equals sign followed by the length, eg: `-r=32`.
 
 ### Retrieve a Password
 ```bash
